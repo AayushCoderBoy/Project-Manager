@@ -1,0 +1,309 @@
+/* General Layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e0e0e0, #f5f5f5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background: #0077B6;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+    background: #005f8d;
+}
+
+/* Burger Menu (For Mobile) */
+.burger-menu {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    font-size: 24px;
+    background: #0077B6;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Hide sidebar on mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        height: 100vh;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 230px;
+    padding: 20px;
+    width: calc(100% - 230px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: calc(100% - 30px);
+    margin: 0 15px 20px 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Project Form */
+.project-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 30px);
+    max-width: 600px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.project-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Make all input fields, select boxes, and textareas the same size */
+.project-form input,
+.project-form textarea,
+.project-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.project-form input:focus,
+.project-form textarea:focus,
+.project-form select:focus {
+    border-color: #00d4ff;
+    box-shadow: 0px 0px 5px #00d4ff;
+}
+
+/* Ensure textarea expands correctly */
+.project-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Ensure file input follows the same width */
+.project-form input[type="file"] {
+    padding: 10px;
+}
+
+/* Project Form Button */
+.project-form button {
+    background: #0077B6;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.project-form button:hover {
+    background: #005f8d;
+}
+
+/* Projects Section */
+.projects-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 30px);
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.projects-section h2 {
+    text-align: center;
+}
+
+.projects-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-section li {
+    background: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header,
+    .project-form,
+    .projects-section {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .projects-section li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .project-form input,
+    .project-form textarea,
+    .project-form select {
+        font-size: 14px;
+    }
+
+    .project-form button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Container for Pending & Completed Projects */
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+/* Pending & Completed Projects as Square Boxes */
+.pending-projects,
+.completed-projects {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    min-width: 280px;
+    max-width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+/* Section Titles */
+.pending-projects h3,
+.completed-projects h3 {
+    background: #0077B6;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Project Lists */
+.pending-projects ul,
+.completed-projects ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pending-projects li,
+.completed-projects li {
+    background: #f8f9fa;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pending-projects,
+    .completed-projects {
+        width: 90%;
+        max-width: 100%;
+    }
+}

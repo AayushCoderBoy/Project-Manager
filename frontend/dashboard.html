@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>Project Manager</h2>
+        <ul>
+            <li class="active"><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="tasks.html">My Tasks</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Burger Menu Icon -->
+    <div class="burger-menu" id="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Header -->
+        <div class="welcome-section">
+            <h1>Welcome, <span id="user-name">User</span>!</h1>
+            <p>Your Email: <span id="user-email">user@example.com</span></p>
+        </div>
+
+        <!-- Task Overview -->
+        <div class="task-overview">
+            <h2>Task Overview</h2>
+            <div class="task-stats">
+                <div class="stat-box">
+                    <h3>Pending Tasks</h3>
+                    <p id="pending-tasks">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Completed Tasks</h3>
+                    <p id="completed-tasks">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Tasks & My Projects -->
+        <div class="task-project-container">
+            <div class="tasks">
+                <h2>My Tasks</h2>
+                <ul id="task-list">
+                    <li>No tasks yet</li>
+                </ul>
+            </div>
+            <div class="projects">
+                <h2>My Projects</h2>
+                <ul id="project-list">
+                    <li>Project A - Deadline: 20th March</li>
+                    <li>Project B - Deadline: 5th April</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/dashboard.js"></script>
+
+</body>
+</html>

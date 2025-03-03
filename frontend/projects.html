@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="./assets/css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Burger Menu (For Mobile) -->
+    <div class="burger-menu" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Project Manager</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="tasks.html">My Tasks</a></li>
+            <li class="active"><a href="projects.html">My Projects</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>My Projects</h1>
+        </div>
+
+        <!-- Project Form -->
+        <div class="project-form">
+            <h2>Create a New Project</h2>
+
+            <label for="project-title">Project Title (Required)</label>
+            <input type="text" id="project-title" placeholder="Enter project title" required>
+
+            <label for="project-desc">Project Description</label>
+            <textarea id="project-desc" placeholder="Enter a brief description"></textarea>
+
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date">
+
+            <label for="project-deadline">Deadline</label>
+            <input type="date" id="project-deadline">
+
+            <label for="assigned-members">Assigned Members</label>
+            <select id="assigned-members" multiple>
+                <option value="member1">1 Member </option>
+                <option value="member2">2 Member </option>
+                <option value="member3">3 Member </option>
+                <option value="member3">4 Member </option>
+                <option value="member3">5 Member </option>
+            </select>
+
+            <label for="project-owner">Project Owner/Manager</label>
+            <input type="text" id="project-owner" placeholder="Enter manager name">
+
+            <label for="project-status">Project Status</label>
+            <select id="project-status">
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+                <option value="on-hold">On Hold</option>
+            </select>
+
+            <label for="priority-level">Priority Level</label>
+            <select id="priority-level">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+            </select>
+
+            <label for="completion-percentage">Completion Percentage</label>
+            <input type="number" id="completion-percentage" min="0" max="100" placeholder="Enter percentage">
+
+            <label for="budget">Budget/Estimated Cost</label>
+            <input type="number" id="budget" placeholder="Enter estimated budget">
+
+            <label for="attachments">Attachments</label>
+            <input type="file" id="attachments" multiple>
+
+            <button id="add-project-btn">Add Project</button>
+        </div>
+
+        <!-- Project List -->
+        <div class="projects-section">
+            <h2>All Projects</h2>
+
+            <!-- Pending Projects -->
+            <div class="pending-projects">
+                <h3>Pending Projects</h3>
+                <ul id="pending-projects-container"></ul>
+            </div>
+
+            <!-- Completed Projects -->
+            <div class="completed-projects">
+                <h3>Completed Projects</h3>
+                <ul id="completed-projects-container"></ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./assets/js/projects.js"></script>
+
+</body>
+</html>
+

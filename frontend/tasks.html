@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+    <link rel="stylesheet" href="./assets/css/tasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar (Same as Dashboard) -->
+    <div class="sidebar" id="sidebar">
+        <h2>Project Manager</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="active"><a href="tasks.html">My Tasks</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Burger Menu -->
+    <div class="burger-menu" id="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="welcome-section">
+            <h1>My Tasks</h1>
+        </div>
+
+        <!-- Task Form -->
+        <div class="task-form">
+            <h2>Create a New Task</h2>
+            <input type="text" id="task-title" placeholder="Task Title">
+            <textarea id="task-desc" placeholder="Task Description"></textarea>
+            <input type="date" id="task-deadline">
+            <button id="add-task-btn">Add Task</button>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list">
+            <h2>Pending Tasks</h2>
+            <ul id="pending-tasks"></ul>
+        </div>
+
+        <div class="task-list">
+            <h2>Completed Tasks</h2>
+            <ul id="completed-tasks"></ul>
+        </div>
+    </div>
+
+    <script src="./assets/js/tasks.js"></script>
+
+</body>
+</html>

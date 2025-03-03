@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar (Same as Tasks Section) -->
+    <div class="sidebar" id="sidebar">
+        <h2>Project Manager</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="tasks.html">My Tasks</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+            <li class="active"><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Burger Menu -->
+    <div class="burger-menu" id="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="welcome-section">
+            <h1>My Profile</h1>
+        </div>
+
+        <!-- Profile Card (Initially Visible) -->
+        <div id="profile-card" class="profile-card">
+            <div class="profile-image">
+                <img id="profile-pic-display" src="./assets/images/default-profile.jpg" alt="Profile Picture">
+            </div>
+            <h2 id="profile-name">User Name</h2>
+            <p id="profile-email">user@example.com</p>
+            <button id="edit-profile-btn">Edit Profile</button>
+        </div>
+
+        <!-- Profile Edit Form (Initially Hidden) -->
+        <div id="profile-form-container" class="profile-form">
+            <h2>Update Profile</h2>
+            <form id="profile-form">
+                <div class="profile-image">
+                    <img id="profile-pic-preview" src="./assets/images/default-profile.jpg" alt="Profile Picture">
+                    <label for="profile-pic"><i class="fas fa-camera"></i></label>
+                    <input type="file" id="profile-pic" accept="image/*">
+                </div>
+
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email">
+
+                <label for="password">New Password</label>
+                <input type="password" id="password" placeholder="Enter new password">
+
+                <button type="submit" id="update-profile-btn">Update Profile</button>
+                <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/profile.js"></script>
+</body>
+</html>
